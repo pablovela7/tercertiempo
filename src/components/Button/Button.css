@@ -1,19 +1,4 @@
-.NavBar {
-    display: flex;
-    background: transparent;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    background: wheat;
-  }
-  
-  .Categories {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .Option {
+.myButton {
     /* color: #8C30F5; */
     text-decoration: none;
     border-radius: 25;
@@ -37,8 +22,4 @@
     border-style: none;
     cursor: pointer;
     outline: inherit;
-  }
-  
-  .NavLink {
-    color :rgb(255, 0, 0)
   }
