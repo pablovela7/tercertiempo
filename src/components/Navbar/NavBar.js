@@ -29,10 +29,10 @@ const NavBar = ({title,color}) => {
           <h3>{title}</h3>
         </div>
         <div className="Categories">
-          <Button label='Inicio' backgroundColor='red' colorText='white' handleClick={handleInicio} />
-          <Button label='Productos'  handleClick={handleProductos}  />
-          <Button label='Locales'  handleClick={handleLocales} />
-          <Button label='Contacto'  handleClick={handleContacto}  />
+          <Button label='Remeras' backgroundColor='red' colorText='white' handleClick={handleInicio} />
+          <Button label='Buzos'  handleClick={handleProductos}  />
+          <Button label='Jeans'  handleClick={handleLocales} />
+          <Button label='Camperas'  handleClick={handleContacto}  />
 
         </div>
         <CartWidget />

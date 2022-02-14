@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-const FunctionCounter = (props) => {
-    const [count, setCount] = useState(0)
+const FunctionCounter = () => {
+    const [count, setCount] = useState(0) 
 
 
     useEffect(() => {
@@ -12,7 +12,7 @@ const FunctionCounter = (props) => {
             console.log('Me voy a desmontar')
             setCount(0)          
         }
-    }, [])
+    }, []) 
     
     useEffect(() => {
         console.log('count cambio')
@@ -25,6 +25,7 @@ const FunctionCounter = (props) => {
         }
     }, [count])
 
+    
       
 
     const decrement = () => {
