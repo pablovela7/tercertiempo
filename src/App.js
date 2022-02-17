@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import FunctionCounter from './components/FunctionCounter/FunctionCounter';
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar  title="ecommerce" color="red"/>
+      <NavBar  title="Tercer Tiempo" color="red"/>
       <ItemListContainer greeting='Productos' />
       <button onClick={() => setShow(!show)}>{show ? 'Mostrar Class Counter' : 'Mostrar Function Counter'}</button>
       {show ? <FunctionCounter /> : <ClassCounter />}

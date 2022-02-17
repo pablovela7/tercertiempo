@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 const FunctionCounter = () => {
     const [count, setCount] = useState(0) 
 
-
     useEffect(() => {
         console.log('El componente se monto')
         setCount(count + 1)

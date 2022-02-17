@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import ItemCount from "../ItemCount/ItemCount"
 import { getProducts } from '../../asyncmock'
+import ItemList from '../ItemList/ItemList'
 
 
 
@@ -26,6 +27,7 @@ const ItemListContainer = ({greeting = 'Hello'})=> {
     return (
         <div className="ItemListContainer">
             <h1>{greeting}</h1>
+            <ItemList products={products}/>
             <ItemCount stock={10} initial={2} onAdd={handleOnAdd}/>
             <ul>
                 {products.map(product => {

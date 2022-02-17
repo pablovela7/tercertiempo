@@ -1,3 +1,6 @@
+import './CartWidget.css'
+
+
 const CartWidget = () => {
     return(
         <button className="Option" style={{ backgroundColor: 'orange', color: 'black', fontSize: 14}}>
