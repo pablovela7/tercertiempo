@@ -1,20 +1,22 @@
-import { useState } from 'react';
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
-import FunctionCounter from './components/FunctionCounter/FunctionCounter';
-import ClassCounter from './components/ClassCounter/ClassCounter';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
-  const [show, setShow] = useState(true)
+const App = () => {
 
   return (
     <div className="App">
-      <NavBar  title="Tercer Tiempo" color="red"/>
-      <ItemListContainer greeting='Productos' />
-      <button onClick={() => setShow(!show)}>{show ? 'Mostrar Class Counter' : 'Mostrar Function Counter'}</button>
-      {show ? <FunctionCounter /> : <ClassCounter />}
-      {/* {!show && <ClassCounter />} */}
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/about' element={<h1>About</h1>} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,40 +1,39 @@
 import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
-import ItemCount from "../ItemCount/ItemCount"
-import { getProducts } from '../../asyncmock'
 import ItemList from '../ItemList/ItemList'
+import { getProducts } from '../../asyncmock'
 
 
 
 
-const ItemListContainer = ({greeting = 'Hello'})=> {
-    const [products, setProducts] = useState([])
+const ItemListContainer = () => {
+    const [products, setProducts] = useState()
+    const [loading, setLoading] = useState(true)
 
     
     useEffect(() => {
-        getProducts().then(products => {
-            console.log(products)
-            setProducts(products)
+        getProducts().then(item => {
+            setProducts(item)
+        }).catch(err  => {
+            console.log(err)
+        }).finally(() => {
+            setLoading(false)
         })
+
+        return (() => {
+            setProducts()
+        })          
     }, [])
     
-    const handleOnAdd = (quantity) => {
-        console.log(`Se agregaron ${quantity} productos`)
-    }
-
-    console.log(products)
-
     return (
         <div className="ItemListContainer">
-            <h1>{greeting}</h1>
-            <ItemList products={products}/>
-            <ItemCount stock={10} initial={2} onAdd={handleOnAdd}/>
-            <ul>
-                {products.map(product => {
-                    return <li key={product.id}>{product.name}</li>
-                })}
-                
-            </ul>
+            {
+                loading ? 
+                    <h1>Cargando...</h1> :  
+                products.length ? 
+                    <ItemList products={products}/> : 
+                    <h1>No se encontraron productos!</h1>
+            }
         </div>
     )    
     
