@@ -2,6 +2,11 @@ import './Item.css'
 import { Link } from 'react-router-dom'
 
 const Item = ({product}) => {
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        console.log('Hice click en el boton')
+    }
    
     return (
         <article className="CardItem">
@@ -20,6 +25,7 @@ const Item = ({product}) => {
             </section>           
             <footer className='ItemFooter'>
                 <Link to={`/detail/${product.id}`}>Ver detalle</Link>
+                <button onClick={handleClick}>Boton</button>
             </footer>
         </article>
     )

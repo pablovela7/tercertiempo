@@ -4,13 +4,14 @@ import ItemList from '../ItemList/ItemList'
 import { getProducts } from '../../asyncmock'
 
 
-
-
 const ItemListContainer = () => {
     const [products, setProducts] = useState()
     const [loading, setLoading] = useState(true)
 
-    
+    // const onResize = () => {
+    //     console.log('cambio el tamaño de la vantana')
+    // }
+
     useEffect(() => {
         getProducts().then(item => {
             setProducts(item)
@@ -20,13 +21,17 @@ const ItemListContainer = () => {
             setLoading(false)
         })
 
+        // window.addEventListener('resize', onResize)
+        
+
         return (() => {
             setProducts()
+            // window.removeEventListener('resize', onResize)
         })          
     }, [])
     
     return (
-        <div className="ItemListContainer">
+        <div onClick={() => console.log('hice click en itemListContainer')} className="ItemListContainer">
             {
                 loading ? 
                     <h1>Cargando...</h1> :  
