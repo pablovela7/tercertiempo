@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { useEffect, useState} from 'react'
 import { getCategories } from '../../asyncmock'
 
-const NavBar = () => { 
+const NavBar = () => { //{ title: 'ecommerce ', color='red'}
   const [categories, setCategories] = useState([])
 
   useEffect(() => {

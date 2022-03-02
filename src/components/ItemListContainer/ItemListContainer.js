@@ -2,18 +2,20 @@ import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
 import { getProducts } from '../../asyncmock'
+import { useParams } from 'react-router-dom'
+
+
 
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState()
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-
-    // const onResize = () => {
-    //     console.log('cambio el tamaño de la vantana')
-    // }
-
+    const { categoryId } = useParams()
+     
     useEffect(() => {
-        getProducts().then(item => {
+        setLoading(true)
+
+        getProducts(categoryId).then(item => {
             setProducts(item)
         }).catch(err  => {
             console.log(err)
@@ -21,17 +23,13 @@ const ItemListContainer = () => {
             setLoading(false)
         })
 
-        // window.addEventListener('resize', onResize)
-        
-
         return (() => {
             setProducts()
-            // window.removeEventListener('resize', onResize)
         })          
-    }, [])
+    }, [categoryId])
     
     return (
-        <div onClick={() => console.log('hice click en itemListContainer')} className="ItemListContainer">
+        <div className="ItemListContainer">
             {
                 loading ? 
                     <h1>Cargando...</h1> :  

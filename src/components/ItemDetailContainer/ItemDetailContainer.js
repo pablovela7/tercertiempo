@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
-    const [counter, setCounter] = useState('button')
 
     const { productId } = useParams()
     
@@ -27,22 +26,14 @@ const ItemDetailContainer = () => {
 
     }, [productId])
 
-    const handleCount = () => {
-        if(counter === 'button'){
-            setCounter('input')
-        } else {
-            setCounter('button')
-        }
-    }
 
     return (
         <div className="ItemDetailContainer" >
-            <button onClick={handleCount}>Cambiar count</button>
             { 
                 loading ? 
                     <h1>Cargando...</h1> :
                 product ? 
-                    <ItemDetail  {...product} inputType={counter}/> :
+                    <ItemDetail  {...product} /> :
                     <h1>El producto no existe</h1> 
             }
         </div>
