@@ -8,7 +8,7 @@ Web store created with the ReactJs library that allows browsing between various 
 
 ## Visual
 
-![Alt Text](<a href="https://ibb.co/xMfVYTZ"><img src="https://i.ibb.co/y8YLpj2/tercer-tiempo.gif" alt="tercer-tiempo" border="0" /></a>)
+<a href="https://ibb.co/xMfVYTZ"><img src="https://i.ibb.co/y8YLpj2/tercer-tiempo.gif" alt="tercer-tiempo" border="0" /></a>
 
 ## Installation
 ### 1 - clonar el repositorio
