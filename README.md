@@ -8,7 +8,7 @@ Web store created with the ReactJs library that allows browsing between various 
 
 ## Visual
 
-![Alt Text](https://ibb.co/xMfVYTZ)
+![Alt Text](https://i.ibb.co/y8YLpj2/20220328-134653.gif)
 
 ## Installation
 ### 1 - clonar el repositorio
